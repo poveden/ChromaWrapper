@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Copyright>Copyright © Jorge Poveda Coma</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>jpc.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/poveden/ChromaWrapper/main/img/jpc.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/poveden/ChromaWrapper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/poveden/ChromaWrapper</RepositoryUrl>
+    <Description>A .NET wrapper for the Razer Chroma SDK.</Description>
+    <PackageId>ChromaWrapper</PackageId>
+    <Version>1.0.0</Version>
+    <RepositoryType>git</RepositoryType>
+    <Authors>Jorge Poveda Coma</Authors>
+    <PackageTags>Razer; Chroma; SDK</PackageTags>
+    <Company>https://github.com/poveden/ChromaWrapper</Company>
+    <NeutralLanguage>en</NeutralLanguage>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)..\Common.props" />
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\img\jpc.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>ChromaWrapper.Tests</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+</Project>
