@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace ChromaWrapper
 {
@@ -7,7 +6,7 @@ namespace ChromaWrapper
     /// Represents an RGB color.
     /// </summary>
     /// <seealso href="https://docs.microsoft.com/en-us/windows/win32/gdi/colorref">COLORREF</seealso>
-    public readonly partial struct ChromaColor : IEquatable<ChromaColor>
+    public readonly partial record struct ChromaColor
     {
         /// <summary>
         /// Gets a transparent keyboard key color.
@@ -54,28 +53,6 @@ namespace ChromaWrapper
         public static implicit operator Color(ChromaColor color)
         {
             return color.ToColor();
-        }
-
-        /// <summary>
-        /// Returns a value indicating whether two <see cref="ChromaColor"/> values are equal.
-        /// </summary>
-        /// <param name="left">The first value to compare.</param>
-        /// <param name="right">The second value to compare.</param>
-        /// <returns><c>true</c> if <paramref name="left"/> and <paramref name="right"/> represent the same color; otherwise, <c>false</c>.</returns>
-        public static bool operator ==(ChromaColor left, ChromaColor right)
-        {
-            return left.Equals(right);
-        }
-
-        /// <summary>
-        /// Returns a value indicating whether two <see cref="ChromaColor"/> values are different.
-        /// </summary>
-        /// <param name="left">The first value to compare.</param>
-        /// <param name="right">The second value to compare.</param>
-        /// <returns><c>true</c> if <paramref name="left"/> and <paramref name="right"/> represent different colors; otherwise, <c>false</c>.</returns>
-        public static bool operator !=(ChromaColor left, ChromaColor right)
-        {
-            return !(left == right);
         }
 
         /// <summary>
@@ -160,16 +137,6 @@ namespace ChromaWrapper
         }
 
         /// <summary>
-        /// Indicates whether this instance and a specified object are equal.
-        /// </summary>
-        /// <param name="obj">An object to compare with this object.</param>
-        /// <returns><c>true</c> if <paramref name="obj"/> and this instance are the same type and represents the same value; otherwise, <c>false</c>.</returns>
-        public override bool Equals(object? obj)
-        {
-            return obj is ChromaColor color && Equals(color);
-        }
-
-        /// <summary>
         /// Returns the hash code for this instance.
         /// </summary>
         /// <returns>A 32-bit signed integer hash code.</returns>
@@ -179,12 +146,25 @@ namespace ChromaWrapper
         }
 
         /// <summary>
-        ///  Converts this <see cref="ChromaColor"/> structure to a human-readable string.
+        /// Converts this <see cref="ChromaColor"/> structure to a human-readable string.
         /// </summary>
         /// <returns>An HTML hex triplet string representation of this structure's color.</returns>
         public override string ToString()
         {
             return $"#{ToRgb():X6}";
+        }
+
+        /// <summary>
+        /// Deconstructs this <see cref="ChromaColor"/> structure into its components.
+        /// </summary>
+        /// <param name="r">The red component value.</param>
+        /// <param name="g">The green component value.</param>
+        /// <param name="b">The blue component value.</param>
+        public void Deconstruct(out byte r, out byte g, out byte b)
+        {
+            r = R;
+            g = G;
+            b = B;
         }
 
         internal static ChromaColor FromInt32(int value)

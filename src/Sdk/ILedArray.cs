@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ChromaWrapper.Sdk
+﻿namespace ChromaWrapper.Sdk
 {
     /// <summary>
     /// Represents a collection of LEDs that can be addressed by index. Implemented by <see cref="ILedArrayEffect"/>.<see cref="ILedArrayEffect.Color"/>.

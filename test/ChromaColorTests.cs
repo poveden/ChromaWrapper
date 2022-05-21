@@ -1,4 +1,6 @@
 ﻿using System.Drawing;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using ChromaWrapper.Tests.Internal;
 using Xunit;
@@ -140,6 +142,22 @@ namespace ChromaWrapper.Tests
         [Fact]
         public void IEquatableIsCorrectlyImplemented()
         {
+            static bool IsCompilerGenerated(MemberInfo mi)
+            {
+                return mi.GetCustomAttribute<CompilerGeneratedAttribute>() != null;
+            }
+
+            var t = typeof(ChromaColor);
+
+            Assert.True(t.IsAssignableTo(typeof(IEquatable<ChromaColor>)));
+
+            Assert.True(IsCompilerGenerated(t.GetMethod("Equals", new[] { typeof(object) })!));
+            Assert.True(IsCompilerGenerated(t.GetMethod("op_Equality", new[] { t, t })!));
+            Assert.True(IsCompilerGenerated(t.GetMethod("op_Inequality", new[] { t, t })!));
+
+            Assert.False(IsCompilerGenerated(t.GetMethod("GetHashCode")!));
+            Assert.False(IsCompilerGenerated(t.GetMethod("Equals", new[] { t })!));
+
             int bgr1 = 0x020100;
             int bgr2 = 0x020101;
 
@@ -201,6 +219,21 @@ namespace ChromaWrapper.Tests
             var color = ChromaColor.FromRgb(0x00aa22);
 
             Assert.Equal("#00AA22", color.ToString());
+        }
+
+        [Fact]
+        public void CanBeDeconstructed()
+        {
+            byte r1 = 113;
+            byte g1 = 221;
+            byte b1 = 15;
+
+            var color = ChromaColor.FromRgb(r1, g1, b1);
+            (byte r2, byte g2, byte b2) = color;
+
+            Assert.Equal(r1, r2);
+            Assert.Equal(g1, g2);
+            Assert.Equal(b1, b2);
         }
     }
 }

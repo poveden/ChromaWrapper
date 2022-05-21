@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ChromaWrapper.Internal
+﻿namespace ChromaWrapper.Internal
 {
     /// <summary>
     /// Represents a color buffer, used to store LED and key layouts in custom effects.

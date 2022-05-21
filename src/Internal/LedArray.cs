@@ -1,5 +1,4 @@
-﻿using System;
-using ChromaWrapper.Sdk;
+﻿using ChromaWrapper.Sdk;
 
 namespace ChromaWrapper.Internal
 {

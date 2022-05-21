@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using ChromaWrapper.Internal;
+﻿using ChromaWrapper.Internal;
 using ChromaWrapper.Keyboard;
 using ChromaWrapper.Sdk;
 using ChromaWrapper.Tests.Internal;

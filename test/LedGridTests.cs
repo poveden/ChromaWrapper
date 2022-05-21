@@ -1,5 +1,4 @@
-﻿using System;
-using ChromaWrapper.Internal;
+﻿using ChromaWrapper.Internal;
 using ChromaWrapper.Sdk;
 using Xunit;
 

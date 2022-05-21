@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ChromaWrapper.ChromaLink;
+﻿using ChromaWrapper.ChromaLink;
 using ChromaWrapper.Data;
 using ChromaWrapper.Events;
 using ChromaWrapper.Headset;
@@ -35,7 +33,7 @@ namespace ChromaWrapper.Sdk
         /// <summary>
         /// Gets the collection of effect IDs created by the <c>CreateEffect()</c> methods.
         /// </summary>
-        public IReadOnlyCollection<Guid> CreatedEffects { get; }
+        public IReadOnlySet<Guid> CreatedEffects { get; }
 
         /// <summary>
         /// Creates an effect for keyboards.

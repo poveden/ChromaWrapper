@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 using ChromaWrapper.Keyboard;
 using ChromaWrapper.Sdk;
 

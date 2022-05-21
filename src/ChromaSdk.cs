@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using ChromaWrapper.ChromaLink;
 using ChromaWrapper.Data;
 using ChromaWrapper.Events;
@@ -100,7 +98,7 @@ namespace ChromaWrapper
         public event EventHandler<ChromaApplicationStateEventArgs>? ApplicationState;
 
         /// <inheritdoc/>
-        public IReadOnlyCollection<Guid> CreatedEffects => _createdEffects;
+        public IReadOnlySet<Guid> CreatedEffects => _createdEffects;
 
         /// <summary>
         /// Gets a value indicating whether the Razer Chroma SDK is available.

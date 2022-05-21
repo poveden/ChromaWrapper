@@ -1,7 +1,5 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.Resources;
 using System.Runtime.Serialization;
 using ChromaWrapper.Sdk;

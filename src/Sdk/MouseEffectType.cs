@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ChromaWrapper.Sdk
+﻿namespace ChromaWrapper.Sdk
 {
     /// <summary>
     /// Specifies the type of a mouse effect.

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ChromaWrapper.Internal
+﻿namespace ChromaWrapper.Internal
 {
     internal sealed partial class LedKeyGrid : IColorBuffer
     {
