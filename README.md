@@ -18,7 +18,7 @@ A .NET wrapper for the [Razer Chroma SDK](https://developer.razer.com/works-with
 
 ## Library requirements
 
-- [Microsoft .NET 5.0 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet-core/current/runtime) (_x64_ version)
+- [Microsoft .NET 6.0 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/current/runtime) (_x64_ version)
 - [Razer Synapse 3](https://www.razer.com/synapse-3)
 
 ## How to use
@@ -33,7 +33,7 @@ dotnet add package ChromaWrapper
 
 ## Development requirements
 
-- [Visual Studio Community 2019](https://visualstudio.microsoft.com/vs/) with the _.NET desktop development workload_ installed
+- [Visual Studio Community 2022](https://visualstudio.microsoft.com/vs/) with the _.NET desktop development workload_ installed
 - [Razer Synapse 3](https://www.razer.com/synapse-3) or the [Razer Chroma SDK](https://developer.razer.com/works-with-chroma/download/)
 
 ## Contributing

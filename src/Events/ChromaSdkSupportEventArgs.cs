@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ChromaWrapper.Events
+﻿namespace ChromaWrapper.Events
 {
     /// <summary>
     /// Event arguments for the <see cref="ChromaSdk.ChromaSdkSupport"/> event.

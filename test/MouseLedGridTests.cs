@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using ChromaWrapper.Mouse;
+﻿using ChromaWrapper.Mouse;
 using Xunit;
 
 namespace ChromaWrapper.Tests

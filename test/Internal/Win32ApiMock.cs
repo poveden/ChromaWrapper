@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
 using System.Diagnostics;
-using System.Threading;
 using ChromaWrapper.Internal;
 using static ChromaWrapper.Internal.NativeMethods;
 
@@ -28,7 +25,7 @@ namespace ChromaWrapper.Tests.Internal
 
         public virtual IntPtr CreateWindowEx(uint dwExStyle, string lpClassName, string lpWindowName, uint dwStyle, int x, int y, int nWidth, int nHeight, IntPtr hWndParent, IntPtr hMenu, IntPtr hInstance, IntPtr lpParam)
         {
-            var hWnd = (IntPtr)Thread.CurrentThread.ManagedThreadId;
+            var hWnd = (IntPtr)Environment.CurrentManagedThreadId;
             _hWndClass.Add(hWnd, lpClassName);
 
             SendMessage(hWnd, WM_GETMINMAXINFO, IntPtr.Zero, IntPtr.Zero);

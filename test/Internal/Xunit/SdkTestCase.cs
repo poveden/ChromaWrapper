@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Xunit.Abstractions;
 using Xunit.Sdk;
 using static ChromaWrapper.Internal.NativeMethods;

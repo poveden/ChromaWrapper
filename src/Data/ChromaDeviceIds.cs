@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ChromaWrapper.Data
+﻿namespace ChromaWrapper.Data
 {
     /// <summary>
     /// Specifies Chroma device IDs.

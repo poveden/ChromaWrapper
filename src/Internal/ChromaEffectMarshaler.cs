@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace ChromaWrapper.Internal
@@ -9,8 +8,6 @@ namespace ChromaWrapper.Internal
         [ThreadStatic]
         private static GCHandle _handle;
 
-        [SuppressMessage("Usage", "CA1801:Review unused parameters", Justification = "Unused")]
-        [SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "Unused")]
         public static ICustomMarshaler GetInstance(string? pstrCookie)
         {
             return new ChromaEffectMarshaler();

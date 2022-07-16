@@ -1,5 +1,4 @@
-﻿using System;
-using ChromaWrapper.ChromaLink;
+﻿using ChromaWrapper.ChromaLink;
 using ChromaWrapper.Data;
 using ChromaWrapper.Headset;
 using ChromaWrapper.Internal;

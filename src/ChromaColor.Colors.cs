@@ -3,7 +3,7 @@
     /// <content>
     /// Defines common colors.
     /// </content>
-    public readonly partial struct ChromaColor
+    public readonly partial record struct ChromaColor
     {
         /// <summary>Gets a color that has an RGB value of #000000.</summary>
         public static readonly ChromaColor Black;

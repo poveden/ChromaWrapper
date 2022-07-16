@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-using System.Threading;
-using System.Threading.Tasks;
 using ChromaWrapper.Internal;
 using ChromaWrapper.Tests.Internal;
 using Moq;

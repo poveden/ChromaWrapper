@@ -1,5 +1,4 @@
-﻿using System;
-using ChromaWrapper.Keyboard;
+﻿using ChromaWrapper.Keyboard;
 
 namespace ChromaWrapper.Sdk
 {

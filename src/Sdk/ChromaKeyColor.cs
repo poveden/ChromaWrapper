@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace ChromaWrapper.Sdk
 {
@@ -12,7 +11,7 @@ namespace ChromaWrapper.Sdk
     /// as transparent and therefore is not rendered.
     /// </remarks>
     /// <seealso cref="ChromaColor"/>
-    public readonly struct ChromaKeyColor : IEquatable<ChromaKeyColor>
+    public readonly record struct ChromaKeyColor
     {
         internal const int KeySetFlag = 0x1000000;
 
@@ -93,28 +92,6 @@ namespace ChromaWrapper.Sdk
         }
 
         /// <summary>
-        /// Returns a value indicating whether two <see cref="ChromaKeyColor"/> values are equal.
-        /// </summary>
-        /// <param name="left">The first value to compare.</param>
-        /// <param name="right">The second value to compare.</param>
-        /// <returns><c>true</c> if <paramref name="left"/> and <paramref name="right"/> represent the same color; otherwise, <c>false</c>.</returns>
-        public static bool operator ==(ChromaKeyColor left, ChromaKeyColor right)
-        {
-            return left.Equals(right);
-        }
-
-        /// <summary>
-        /// Returns a value indicating whether two <see cref="ChromaKeyColor"/> values are different.
-        /// </summary>
-        /// <param name="left">The first value to compare.</param>
-        /// <param name="right">The second value to compare.</param>
-        /// <returns><c>true</c> if <paramref name="left"/> and <paramref name="right"/> represent different colors; otherwise, <c>false</c>.</returns>
-        public static bool operator !=(ChromaKeyColor left, ChromaKeyColor right)
-        {
-            return !(left == right);
-        }
-
-        /// <summary>
         /// Creates a <see cref="ChromaKeyColor"/> structure from a <see cref="Color"/> structure.
         /// </summary>
         /// <param name="color">The <see cref="Color"/> structure to copy the RGB components from.</param>
@@ -168,16 +145,6 @@ namespace ChromaWrapper.Sdk
         }
 
         /// <summary>
-        /// Indicates whether this instance and a specified object are equal.
-        /// </summary>
-        /// <param name="obj">An object to compare with this object.</param>
-        /// <returns><c>true</c> if <paramref name="obj"/> and this instance are the same type and represents the same value; otherwise, <c>false</c>.</returns>
-        public override bool Equals(object? obj)
-        {
-            return obj is ChromaKeyColor color && Equals(color);
-        }
-
-        /// <summary>
         /// Returns the hash code for this instance.
         /// </summary>
         /// <returns>A 32-bit signed integer hash code.</returns>
@@ -187,7 +154,7 @@ namespace ChromaWrapper.Sdk
         }
 
         /// <summary>
-        ///  Converts this <see cref="ChromaKeyColor"/> structure to a human-readable string.
+        /// Converts this <see cref="ChromaKeyColor"/> structure to a human-readable string.
         /// </summary>
         /// <returns>An HTML hex triplet string representation of this structure's color, or '(Transparent)' if there's no color set.</returns>
         public override string ToString()
@@ -195,6 +162,21 @@ namespace ChromaWrapper.Sdk
             return _value == 0
                 ? "(Transparent)"
                 : ((ChromaColor)this).ToString();
+        }
+
+        /// <summary>
+        /// Deconstructs this <see cref="ChromaKeyColor"/> structure into its components.
+        /// </summary>
+        /// <param name="r">The red component value.</param>
+        /// <param name="g">The green component value.</param>
+        /// <param name="b">The blue component value.</param>
+        /// <param name="isTransparent">Whether this <see cref="ChromaKeyColor"/> structure is the <see cref="Transparent"/> key color.</param>
+        public void Deconstruct(out byte r, out byte g, out byte b, out bool isTransparent)
+        {
+            r = R;
+            g = G;
+            b = B;
+            isTransparent = IsTransparent;
         }
 
         internal static ChromaKeyColor FromInt32(int value)

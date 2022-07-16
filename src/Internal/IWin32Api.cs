@@ -1,5 +1,4 @@
-﻿using System;
-using static ChromaWrapper.Internal.NativeMethods;
+﻿using static ChromaWrapper.Internal.NativeMethods;
 
 namespace ChromaWrapper.Internal
 {
