@@ -1,7 +1,4 @@
-﻿using System.Reflection;
-using Xunit;
-
-namespace ChromaWrapper.Tests.Internal
+﻿namespace ChromaWrapper.Tests.Internal
 {
     internal static class MetaTestsCommon
     {

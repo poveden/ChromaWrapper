@@ -1,11 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30011.22
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{2A88822A-A4C1-4550-BAB1-7BA1DB3A936B}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		.lgtm.yml = .lgtm.yml
 		Common.props = Common.props
 		stylecop.json = stylecop.json
 	EndProjectSection
