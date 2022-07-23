@@ -67,8 +67,8 @@ namespace ChromaWrapper.Tests
                 Description = "ChromaSdk Unit Tests",
                 AuthorName = "John Doe",
                 AuthorContact = "john.doe@example.com",
-                Category = ChromaAppInfo.AppCategory.Utility,
-                SupportedDevice = ChromaAppInfo.SupportedDevices.All,
+                Category = AppCategory.Utility,
+                SupportedDevice = SupportedDevices.All,
             };
 
             using (var sdk = CreateInstance(ai, true))
