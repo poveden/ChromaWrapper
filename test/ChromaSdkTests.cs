@@ -22,17 +22,14 @@ using static ChromaWrapper.Internal.NativeMethods;
 namespace ChromaWrapper.Tests
 {
     [Collection(PInvokeTestsCollection.Name)]
-    public class ChromaSdkTests
+    public class ChromaSdkTests : SdkTestBase
     {
         private static readonly ResourceManager _resources = typeof(ChromaSdkException).GetPrivateStaticField<ResourceManager>("_resources")!;
 
         public ChromaSdkTests(ITestOutputHelper testOutput)
+            : base(testOutput)
         {
-            // Reference: https://github.com/xunit/xunit/issues/416#issuecomment-378512739
-            var test = testOutput.GetPrivateField<ITest>("test")!;
-            var sdkTestCase = test.TestCase as SdkTestCase;
-
-            NativeChromaSdkApiMock = sdkTestCase?.IsNativeSdkTest ?? false
+            NativeChromaSdkApiMock = IsNativeSdkTest
                 ? new Mock<ChromaSdkApiProxy>(MockBehavior.Loose) { CallBase = true }.As<IChromaSdkApi>()
                 : new Mock<ChromaSdkApiMock>(MockBehavior.Loose) { CallBase = true }.As<IChromaSdkApi>();
         }
