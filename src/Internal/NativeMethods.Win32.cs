@@ -3,7 +3,6 @@ using System.Runtime.InteropServices;
 
 namespace ChromaWrapper.Internal
 {
-    // Reference: https://assets.razerzone.com/dev_portal/C%2B%2B/html/en/_rz_chroma_s_d_k_8h.html
     internal sealed partial class NativeMethods : IWin32Api
     {
         public const uint WM_DESTROY = 0x0002;

@@ -11,7 +11,7 @@ using static ChromaWrapper.Internal.NativeMethods;
 
 namespace ChromaWrapper.Tests.Internal
 {
-    // Since ChromaSdk is sealed, we wrap it so we can setup mocks and verify calls.
+    // Since NativeMethods is sealed, we wrap it so we can setup mocks and verify calls.
     internal class ChromaSdkApiProxy : IChromaSdkApi
     {
         public virtual ChromaResult CreateChromaLinkEffect(ChromaLinkEffectType effect, IChromaLinkEffect pParam, out Guid pEffectId)
