@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/poveden/ChromaWrapper/compare/v1.0.0...HEAD)
 
+### Added
+
+- Add support to inspect Chroma Connect status and to list Chroma-enabled applications
+
 ### Changed
 
 - Update solution to .NET 6.0
