@@ -11,6 +11,7 @@ using ChromaWrapper.Sdk;
 
 namespace ChromaWrapper.Internal
 {
+    // Reference: https://assets.razerzone.com/dev_portal/C%2B%2B/html/en/_rz_chroma_s_d_k_8h.html
     internal sealed partial class NativeMethods : IChromaSdkApi
     {
         public const int WM_CHROMA_EVENT = 0xA000; // WM_APP + 0x2000

@@ -28,7 +28,7 @@ namespace ChromaWrapper.Tests
         }
 
         [Theory]
-        [MemberData(nameof(GetStaticEffectTypes))]
+        [MemberData(nameof(EffectTests.GetStaticEffectTypes), MemberType = typeof(EffectTests))]
         public void StaticEffectIsMarshaledByPinningTheEffectObject(Type type)
         {
             object o = Activator.CreateInstance(type)!;
@@ -51,7 +51,7 @@ namespace ChromaWrapper.Tests
         }
 
         [Theory]
-        [MemberData(nameof(GetCustomEffectTypes))]
+        [MemberData(nameof(EffectTests.GetCustomEffectTypes), MemberType = typeof(EffectTests))]
         public void CustomEffectIsMarshaledByPinningItsColorBuffer(Type type)
         {
             object o = Activator.CreateInstance(type)!;
@@ -73,16 +73,6 @@ namespace ChromaWrapper.Tests
             {
                 marshaler.CleanUpNativeData(ptr);
             }
-        }
-
-        private static IEnumerable<object[]> GetStaticEffectTypes()
-        {
-            return EffectTests.GetStaticEffectTypes();
-        }
-
-        private static IEnumerable<object[]> GetCustomEffectTypes()
-        {
-            return EffectTests.GetCustomEffectTypes();
         }
     }
 }

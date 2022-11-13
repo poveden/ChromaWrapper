@@ -15,8 +15,8 @@ namespace ChromaWrapper.Tests
                 Description = new string('d', 1100),
                 AuthorName = new string('n', 300),
                 AuthorContact = new string('c', 300),
-                Category = ChromaAppInfo.AppCategory.Game,
-                SupportedDevice = ChromaAppInfo.SupportedDevices.All,
+                Category = AppCategory.Game,
+                SupportedDevice = SupportedDevices.All,
             };
 
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(ai));

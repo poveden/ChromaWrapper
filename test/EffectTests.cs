@@ -99,7 +99,8 @@ namespace ChromaWrapper.Tests
             }
         }
 
-        internal static IEnumerable<object[]> GetStaticEffectTypes()
+#pragma warning disable SA1204
+        public static IEnumerable<object[]> GetStaticEffectTypes()
         {
             return from oa in GetAllEffectTypes()
                    let t = (Type)oa[0]
@@ -107,7 +108,7 @@ namespace ChromaWrapper.Tests
                    select oa;
         }
 
-        internal static IEnumerable<object[]> GetCustomEffectTypes()
+        public static IEnumerable<object[]> GetCustomEffectTypes()
         {
             return from oa in GetAllEffectTypes()
                    let t = (Type)oa[0]
@@ -115,7 +116,7 @@ namespace ChromaWrapper.Tests
                    select oa;
         }
 
-        private static IEnumerable<object[]> GetAllEffectTypes()
+        public static IEnumerable<object[]> GetAllEffectTypes()
         {
             var rx = new Regex(@"^\w+Effect2?$");
 
@@ -123,6 +124,7 @@ namespace ChromaWrapper.Tests
                    where t.IsClass && rx.IsMatch(t.Name)
                    select new object[] { t };
         }
+#pragma warning restore SA1204
 
         private static IEnumerable<Type> GetAllEffectInterfaces()
         {
